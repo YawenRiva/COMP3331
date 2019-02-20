@@ -1,0 +1,46 @@
+Exercise 1: nslookup
+    1. there are two address for www.google.com
+        129.94.208.2#53
+        216.58.203.100 (Non-authoritative answer)
+       the reason of having several IP addresses as an output would be the site/company deployed lots server to make sure that the clients from different places in the world can use the closest server to make sure they having the best experience of using the site, and also because there are too many users are using it, such as google
+    2. 1.0.0.127.in-addr.arpa	name = localhost.
+       127.0.0.1 is the address for current host that we're using
+       
+Exercise 2: Use ping to test host reachability
+    1. some hosts are not reachable because the website does not exist, which means i could not open in from the web browser.
+       and if we can open the website from the web browser but cannot reach by using ping, means the site setted to not reply to ping.
+
+Exercise 3: Use traceroute to understand network topology 
+    1. a) there are total 22 routers between my workstation and www.columbia.edu
+       b) there are five routers along the path are part of the UNSW network
+       c) from 9 -> (10) -> 11,(113.197.15.201)to(162.252.70.0), which is from Kensington, Western Australia to America
+    2.   www.ucla.edu  (14)  7499.0 miles
+         www.u-tokyo.ac.jp  (15) 5558.0 miles
+         www.lancaster.ac.uk  (26) 5797.1 miles
+         a) the site www.u-tokyo.ac.jp end at the address 158.205.134.26 its Japan Network Information Center
+         b) the number of hops on each path is not proportional to the physical distance
+    3. a) nemox.net - traceroute && traceroute nemox.net
+       b) the reverse path go through different routers compare to forward path
+       c) there are some common routers, but the ip addresses are different, because most or the routers would choose two different ip for "getting in" and "getting out"
+       
+Exercise 4: Use ping to gain insights into network performance
+    1.  unsw kensington -> uq (458.45 miles)
+                single min delay =(1 609.344*458.45)m/3*10^8 = 0.00246s
+                RTT = 18ms = *0.001 = 0.018s
+                rtt/min = 0.018/0.00246 = 7.32
+        unsw kensington -> nus (3,922.19 miles)
+                single min delay =(1 609.344*3922.19)m/3*10^8 =0.02104s
+                RTT = 142ms = *0.001 = 0.142s
+                rtt/min = 0.142/0.02104 = 6.749
+        unsw kensington -> tu-berlin.de (10,020.16 miles)
+                single min delay =(1 609.344*10020.16)m/3*10^8 =0.05375
+                RTT = 298ms =* 0.001 = 0.298s
+                rtt/min = 5.544
+                 
+    	Reasons: 1. The minimum delay time is single path(forward/reverse), and rtt is total delay time(forward&&reverse); 2. Rtt cannot below 2, or the speed would be even faster than the speed of light.
+
+    2. its vary over time, because for different path, they might having different type of delay, such as propagation delay, process delay and queueing delay...
+    3. transmission delay is depends on the packet size, and 
+
+
+
