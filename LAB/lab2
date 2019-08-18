@@ -1,0 +1,29 @@
+Exercise 3: Using Wireshark to understand basic HTTP request/response messages  
+    Question1:         (frame no.12)         status coode: 200         status phrase: OK 
+    Question2: 
+        Last-Modified: Tue, 23 Sep 2003 05:29:00 GMT 
+        Date: Tue, 23 Sep 2003 05:29:50 GMT         The Date is 50 seconds later than Last-Modified 
+    Question3: 
+        Connection: Keep-Alive 
+        The connection is non-persistent because the connection status is "Keep-Alive"         and it shows "Keep-Alive: timeout=10, max=100"     Question4: 
+        it would be 73, because "Content-Length: 73" 
+    Question5: 
+        (Line-based text data: text): 
+            Congratulations.  You've downloaded the file lab2-1.html!\n 
+ 
+Exercise 4: Using Wireshark to understand the HTTP CONDITIONAL GET/response interaction 
+    Question1: 
+        there's no "IF-MODIFIED-SINCE" line in the HTTP GET (packet 8) 
+    Question2: 
+        the (frame no.10) has "Last-Modified: Tue, 23 Sep 2003 05:35:00 GMT\r\n" included 
+    Question3:         there is "IF-MODIFIED-SINCE:" and "IF-NONE-MATCH" lines in (frame no.14)         information contained: 
+            If-Modified-Since: Tue, 23 Sep 2003 05:35:00 GMT\r\n 
+            If-None-Match: "1bfef-173-8f4ae900"\r\n 
+    Question4: 
+        Status Code: 304 
+        Response Phrase: Not Modified         it didn't return the content of the file         because the status code is 304, not modified, so theres no content inside 
+    Question5: 
+        ETag: "1bfef-173-8f4ae900" 
+        it shows the status, once anything changed, the ETag would change as well. it would send to the server as part of header info. 
+        Yes, the value changed 
+         

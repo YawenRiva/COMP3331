@@ -1,0 +1,47 @@
+Question 1. 
+    What is the IP address of www.cecs.anu.edu.au 
+        150.203.161.98
+    What type of DNS query is sent to get this answer
+        type:'A' because it returns NAME(hostname) and Value(ip address for the host name)
+Question 2. 
+    What is the canonical name for the CECS ANU web server? 
+        canonical name = rproxy.cecs.anu.edu.au.
+    What is its IP address? 
+        150.203.161.98
+    Suggest a reason for having an alias for this server.
+        its easier to remember as the institute's name is CECS ANU
+Question 3. 
+    What can you make of the rest of the response (i.e. the details available in the Authority and Additional sections)? 
+         the Name Servers which provided the IP address is avaliable in the authority and additional setion so we can use these informations to do another dig process.
+Question 4. 
+    What is the IP address of the local nameserver for your machine?
+	(I used ‘dig cse.unsw.edu’) the response is SERVER: 129.94.242.2#53(129.94.242.2)
+Question 5. 
+   What are the DNS nameservers for the “cecs.anu.edu.au” domain (note: the domain name is cecs.anu.edu.au and not www.cecs.anu.edu.au )? 
+	ns4.cecs.anu.edu.au. /  ns2.cecs.anu.edu.au. /  ns3.cecs.anu.edu.au.
+   Find out their IP addresses? 
+	150.203.161.36 / 150.203.161.50 / 150.203.161.38
+   What type of DNS query is sent to obtain this information?
+	“NS”
+Question 6. 
+   What is the DNS name associated with the IP address 149.171.158.109?
+	nstld.verisign-grs.com.
+   What type of DNS query is sent to obtain this information?
+	SOA
+Question 7. 
+  Run dig and query the CSE nameserver (129.94.242.33) for the mail servers for Yahoo! Mail (again the domain name is yahoo.com, not www.yahoo.com ). Did you get an authoritative answer? 
+	Theres no an authoritative answer.
+  Why? (HINT: Just because a response contains information in the authoritative part of the DNS response message does not mean it came from an authoritative name server. You should examine the flags in the response to determine the answer)
+	Because in the flag line, there’s no ‘AA’ so no authoritative answer
+
+Question 8. 
+   Repeat the above (i.e. Question 7) but use one of the nameservers obtained in Question 5. What is the result? 
+	REFUSED, recursion requested but not available
+Question 9. Obtain the authoritative answer for the mail servers for Yahoo! mail. What type of DNS query is sent to obtain this information?
+	dig @ns5.yahoo.com yahoo.com MX
+	“MX”-mail exchanger
+Question 10.  How many DNS servers do you have to query to get the authoritative answer?
+	5 DNS servers
+Question 11. Can one physical machine have several names and/or IP addresses associated with it?
+	Yes, one machine can have more than one IP addresses
+

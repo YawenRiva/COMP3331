@@ -1,0 +1,58 @@
+EXERCISE 1
+Question 1:
+IP address: 128.119.245.12    port number:  80
+Client computer ip: 192.168.1.102      port number: 1161
+Question 2:
+As the destination port of the 4th segment is (80)http and has HTTP POST in the command 
+Sequence number: 1 
+Question 3:
+(eRTT=(1-a)*eRTT+a*SampleRTT)
+six segments in the TCP connection (including the segment containing the HTTP POST) : 4 5 7 8 10 11
+web server (Do not consider the ACKs received from the server as part of these six segments): 6 9 12 14 15 16
+sequence number(4) : 1  / sent time(0.026477) /ACK received(0.053937) / RTT (0.053937-0.026477 = 0.02746) / eRTT(0.02746)
+sequence number(5) : 566 / sent time(0.041737) / ACK received(0.077294) / RTT (0.035557) / eRTT(0.0285)
+sequence number(7) : 2026 / sent time(0.054026) / ACK received(0.124085) / RTT (0.070059) / eRTT(0.0337)
+sequence number(8) : 3486 / sent time(0.054690) / ACK received(0.169118) / RTT (0.11443) / eRTT(0.0438)
+sequence number(10) : 4946 / sent time(0.077405) / ACK received(0.2172799) / RTT (0.13989) / eRTT(0.0558)
+sequence number(11) : 6406 / sent time(0.078157) / ACK received(0.267802) / RTT (0.18964) / eRTT(0.0725)
+Question 4:
+(4) TCP Segment Len: 565
+All other ones : TCP Segment Len: 1460
+Question 5:
+Window size value: 5840
+Max  win=62780
+Question 6:
+No retransmitted segments in the trace file.
+Check the sequence numbers of tcp segments in trace file can help us to answer the question
+Question 7:
+Acknowledgment number: 566   / Acknowledgment data 566
+Acknowledgment number: 2026 / Acknowledgment data 1460
+Acknowledgment number: 3486 / Acknowledgment data 1460
+Acknowledgment number: 4946 / Acknowledgment data 1460
+Acknowledgment number: 7866 / Acknowledgment data 1460
+Acknowledgment number: 9013 / Acknowledgment data 1147
+Acknowledgment number: 10473 / Acknowledgment data 1460
+…
+Question 8:
+1 byte for the 4th segment / 164091 bytes for the 202nd segment
+Total data = 164091-1=164090 bytes
+0.026477s for the 4th segment / 5.455830s for the 202nd segment
+Total trans time =5.455830 – 0.26477 = 5.4294s
+Total amount of data/total transmission time = 164090/5.4294=30222byte/sec
+ 
+EXERCISE 2
+Question1:
+Seq=2818463618 
+Question2:
+Seq = 1247095790 Ack = 2818463619 = (2818463618 + 1)
+Question3:
+Seq = 2818463619   Ack = 1247095791
+It doesn’t contains any data 
+Question4:
+Client has done the active close,  because client sent FIN flag to tell the server to end
+4 segment (FIN/ACK/FIN/ACK)
+Question5:
+ACK= Seq+data length
+
+
+
